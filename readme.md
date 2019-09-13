@@ -1,72 +1,70 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Laravel Vue Bucketlist App
+An example To Do App built with Laravel and React. It includes:
 
-## About Laravel
+An auth API, using tymon/jwt-auth to manage the JSON Web Tokens.
+Routing with Vue-router (private, public and split routes).
+Feature tests.
+A base ApiController to help return standardized responses.
+Bootstrap for styling.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Development Environment
+This project runs on a WAMP stack (WINDOWS,MySQL, & PHP).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The backend built with Laravel. The frontend is 100% Vue js.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Set Up
+Clone the repository:
+git clone https://github.com//rasheedalt/Laravel-vue-buckelist-project
+Create your environment file:
+cp .env.example .env
+The app key is used to salt passwords. If you need to work with production data you'll want to use the same app key as defined in the .env file in production so password hashes match.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Update these settings in the .env file:
+DB_DATABASE (your local database, i.e. "bucketlist")
+DB_USERNAME (your local db username, i.e. "root")
+DB_PASSWORD (your local db password, i.e. "")
+HASHIDS_SALT (use the app key or match the variable used in production)
+Install PHP dependencies:
+composer install
+If you don't have Composer installed, instructions here.
 
-## Laravel Sponsors
+Generate an app key:
+php artisan key:generate
+Generate JWT keys for the .env file:
+php artisan jwt:secret
+Run the database migrations:
+php artisan migrate
+Install Javascript dependencies:
+npm install
+If you don't have Node and NPM installed, instructions here.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Run an initial build:
+npm run dev
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+#Bucketlist Api
+This Api allows users to create and manage bucketlist and add items to the bucketlist
 
-## Contributing
+##Register a user [auth/register]POST
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+##Login a user [auth/login]POST
 
-## Security Vulnerabilities
+##Log a user out [auth/logout]POST
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+##Create a new bucketlist [/bucketlists]POST
+	+ Create an item in a bucketlist [/bucketlists/{id}/item]POST
+	+ Fetch all items in a bucketlist [/bucketlists/{id}/items]POST
+	+ Edit an item in a bucketlist [/bucketlists/{id}/item]GET
+	+ Delete an item in a bucketlist item [/{item_id}]DELETE
+##Fetch all the bucketlist for a logged-in user [/bucketlistss]POST
 
-## License
+##Fetch a single bucketlist [/bucketlistss]GET
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##Edit a bucketlist item[/bucketlists/{id}]POST
+
+##Delete a bucketlist item [/bucketlists/id]DELETE
+
+##Search a bucketlist item with bucketlist name [/bucketlists/q="bucketlist4"]POST
+
