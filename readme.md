@@ -44,7 +44,11 @@ If you don't have Node and NPM installed, instructions here.
 Run an initial build:
 npm run dev
 
+
+
+
 #Bucketlist Api
+
 This Api allows users to create and manage bucketlist and add items to the bucketlist
 
 ##Register a user [auth/register]POST
@@ -54,11 +58,17 @@ This Api allows users to create and manage bucketlist and add items to the bucke
 ##Log a user out [auth/logout]POST
 
 ##Create a new bucketlist [/bucketlists]POST
+
 	+ Create an item in a bucketlist [/bucketlists/{id}/item]POST
+    
 	+ Fetch all items in a bucketlist [/bucketlists/{id}/items]POST
+    
 	+ Edit an item in a bucketlist [/bucketlists/{id}/item]GET
+    
 	+ Delete an item in a bucketlist item [/{item_id}]DELETE
+    
 ##Fetch all the bucketlist for a logged-in user [/bucketlistss]POST
+
 
 ##Fetch a single bucketlist [/bucketlistss]GET
 
