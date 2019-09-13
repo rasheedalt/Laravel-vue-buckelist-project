@@ -1,0 +1,23 @@
+#Bucketlist Api
+This Api allows users to create and manage bucketlist and add items to the bucketlist
+
+##Register a user [auth/register]POST
+
+##Login a user [auth/login]POST
+
+##Log a user out [auth/logout]POST
+
+##Create a new bucketlist [/bucketlists]POST
+	+ Create an item in a bucketlist [/bucketlists/{id}/item]POST
+	+ Fetch all items in a bucketlist [/bucketlists/{id}/items]POST
+	+ Edit an item in a bucketlist [/bucketlists/{id}/item]GET
+	+ Delete an item in a bucketlist item [/{item_id}]DELETE
+##Fetch all the bucketlist for a logged-in user [/bucketlistss]POST
+
+##Fetch a single bucketlist [/bucketlistss]GET
+
+##Edit a bucketlist item[/bucketlists/{id}]POST
+
+##Delete a bucketlist item [/bucketlists/id]DELETE
+
+##Search a bucketlist item with bucketlist name [/bucketlists/q=""]POST
