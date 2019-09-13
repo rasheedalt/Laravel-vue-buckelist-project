@@ -1,6 +1,7 @@
 
 Laravel Vue Bucketlist App
-An example To Do App built with Laravel and React. It includes:
+
+A bucketlist app built with Laravel and Vuejs. It includes:
 
 An auth API, using tymon/jwt-auth to manage the JSON Web Tokens.
 Routing with Vue-router (private, public and split routes).
@@ -45,6 +46,8 @@ Run an initial build:
 npm run dev
 
 
+
+Api Documentation
 
 
 #Bucketlist Api
